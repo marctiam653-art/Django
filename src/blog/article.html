@@ -1,0 +1,10 @@
+{% extends "DocBlog/base.html" %}
+
+{% block title %}{{ article.titre }}{% endblock %}
+
+{% block content %}
+    <h1>{{ article.titre }}</h1>
+    <p class="date">Publié le {{ article.date_publication|date:"d F Y à H\hi" }}</p>
+    <div>{{ article.contenu|linebreaks }}</div>
+    <p><a href="{% url 'blog-index' %}">← Retour au blog</a></p>
+{% endblock %}

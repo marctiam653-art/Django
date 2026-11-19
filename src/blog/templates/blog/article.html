@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.titre }}</title>
+</head>
+<body>
+    <h1>{{ article.titre }}</h1>
+    <p><em>Publié le {{ article.date_publication|date:"d F Y à H\hi" }}</em></p>
+    <div>{{ article.contenu|linebreaks }}</div>
+    <p><a href="{% url 'blog-index' %}">← Retour au blog</a></p>
+</body>
+</html>

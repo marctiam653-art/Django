@@ -1,0 +1,17 @@
+{% extends "DocBlog/base.html" %}
+
+{% block title %}Le Blog{% endblock %}
+
+{% block content %}
+    <h1>Le Blog</h1>
+    <ul class="liste-articles">
+        {% for article in articles %}
+            <li>
+                <a href="{% url 'blog-article' article.id %}">{{ article.titre }}</a>
+                <span class="date">{{ article.date_publication|date:"d F Y" }}</span>
+            </li>
+        {% empty %}
+            <li>Aucun article pour le moment.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
